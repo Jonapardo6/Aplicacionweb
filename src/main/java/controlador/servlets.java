@@ -23,10 +23,10 @@ public class servlets extends HttpServlet {
 
         // lista para almacenar numeros primos
 
-        List<Integer> primos = new ArrayList<>();
-        for (int i = inicio; i <= fin; i++) {
-            if (esPrimo(i)) {
-                primos.add(i);
+        List<Integer> primos = new ArrayList<>();   // Crea una lista vacía de enteros para almacenar los números primos.
+        for (int i = inicio; i <= fin; i++) {       // Itera desde el valor 'inicio' hasta el valor 'fin', ambos incluidos.
+            if (esPrimo(i)) {                       // Verifica si el número actual 'i' es primo utilizando el método 'esPrimo'.
+                primos.add(i);                      // Si 'i' es primo, lo añade a la lista 'primos'.
             }
         }
 
@@ -38,11 +38,14 @@ public class servlets extends HttpServlet {
     }
       // calculamos numeros primos
 
-    private boolean esPrimo(int num) {
-        if (num <= 1) return false;
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) return false;
+    private boolean esPrimo(int num) {                 // Metodo privado que determina si un número entero es primo.
+        if (num <= 1) return false;                   // Si el número es menor o igual a 1, no es primo, retorna false.
+        for (int i = 2; i <= Math.sqrt(num); i++) {   // Itera desde 2 hasta la raíz cuadrada del número.
+            if (num % i == 0) return false;           // Si 'num' es divisible por 'i', no es primo, retorna false.
         }
-        return true;
+        return true;                                   // Si no se encontró ningún divisor, retorna true, indicando que el número es primo.
+    }
+
+
 }
-}
+
